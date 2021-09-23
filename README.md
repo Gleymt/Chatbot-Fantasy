@@ -18,4 +18,5 @@ pe cinemagia, poate cere un alt film din aceeasi categorie sau se poate intoarce
 
 ### Concluzie
 
-Un chatbot precum acesta poate economisi timpul utilizatorului prin sugestia unor filme populare care fac parte din genurile cautate de utilizator.
+Un chatbot precum acesta este o modalitate interactiva prin care se poate economisi timpul utilizatorului prin sugestia unor filme populare 
+care fac parte din genurile cautate de utilizator.
