@@ -1,0 +1,4909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+ <category>
+        <pattern>Salut</pattern>
+         <template>
+		 <srai>Buna</srai></template>
+     </category>
+  
+   <category>
+    <pattern>Salutare</pattern>
+    <template><srai>Buna</srai></template>
+  </category>
+
+    <category>
+    <pattern>Hello</pattern>
+    <template><srai>Buna</srai></template>
+  </category>
+
+ <category>
+    <pattern>Hei</pattern>
+    <template><srai>Buna</srai></template>
+  </category>
+
+ <category>
+    <pattern>Hi</pattern>
+    <template><srai>Buna</srai></template>
+  </category>
+
+
+<category>
+    <pattern>BUNA</pattern>
+    <template>Buna! Vrei sa vezi un film fantasy ?</template>
+</category>
+
+<category>
+	    <pattern>Ma cheama *</pattern>
+	    <template><image>https://media1.tenor.com/images/aa9d54da72f5cdad6cb030e2540b0dc8/tenor.gif?itemid=13659401</image>
+		Imi pare bine sa te cunosc,<set name="numeledoritorului"><star /></set>.Vrei sa vezi un film fantasy ?</template>
+    </category>
+    <category>
+	    <pattern>Ma numesc * </pattern>
+	    <template><image>https://media1.tenor.com/images/aa9d54da72f5cdad6cb030e2540b0dc8/tenor.gif?itemid=13659401</image>
+		Imi pare bine sa te cunosc,<set name="numeledoritorului"><star /></set>. Vrei sa vezi un film fantasy ?</template>
+    </category>
+    
+    	<category>
+	    <pattern>Numele meu este * </pattern>
+	    <template><image>https://media1.tenor.com/images/aa9d54da72f5cdad6cb030e2540b0dc8/tenor.gif?itemid=13659401</image>
+		Imi pare bine sa te cunosc,<set name="numeledoritorului"><star /></set>. Vrei sa vezi un film fantasy ?</template>
+    </category>
+    
+    	<category>
+	    <pattern>Sunt * </pattern>
+	    <template><image>https://media1.tenor.com/images/aa9d54da72f5cdad6cb030e2540b0dc8/tenor.gif?itemid=13659401</image>
+		Imi pare bine sa te cunosc,<set name="numeledoritorului"><star /></set>. Vrei sa vezi un film fantasy ?</template>
+    </category>
+
+
+    <category>
+        <pattern>Cine sunt </pattern>
+        <template>
+            <think><set var="identificanumeledoritorului"><get name="numeledoritorului" /></set></think> 
+            <condition var="identificanumeledoritorului">
+                <li value="unknown">Nu stiu pentru ca nu ai spus cine esti.</li>
+                <li>Esti <get var="identificanumeledoritorului" />.</li>
+           </condition>
+        </template>
+    </category>
+    
+     <category>
+        <pattern>Cum ma cheama </pattern>
+        <template>
+            <think><set var="identificanumeledoritorului"><get name="numeledoritorului" /></set></think> 
+            <condition var="identificanumeledoritorului">
+                <li value="unknown">Nu stiu pentru ca nu ai spus cum te cheama.</li>
+                <li>Te cheama <get var="identificanumeledoritorului" />.</li>
+           </condition>
+        </template>
+    </category>
+    
+     <category>
+        <pattern>Care este numele meu </pattern>
+        <template>
+            <think><set var="identificanumeledoritorului"><get name="numeledoritorului" /></set></think> 
+            <condition var="identificanumeledoritorului">
+                <li value="unknown">Nu stiu pentru ca nu ai spus care este numele tau.</li>
+                <li>Numele tau este <get var="identificanumeledoritorului" />.</li>
+           </condition>
+        </template>
+    </category>
+    
+     <category>
+        <pattern>Cum ma numesc</pattern>
+        <template>
+            <think><set var="identificanumeledoritorului"><get name="numeledoritorului" /></set></think> 
+            <condition var="identificanumeledoritorului">
+                <li value="unknown">Nu stiu pentru ca nu ai spus cum te numesti.</li>
+                <li>Te numesti <get var="identificanumeledoritorului" />.</li>
+           </condition>
+        </template>
+    </category>
+         <category>
+        <pattern>Ce nume am</pattern>
+        <template>
+            <think><set var="identificanumeledoritorului"><get name="numeledoritorului" /></set></think> 
+            <condition var="identificanumeledoritorului">
+                <li value="unknown">Nu stiu pentru ca un ai spus ce nume ai.</li>
+                <li>Numele tau este <get var="identificanumeledoritorului" />.</li>
+           </condition>
+        </template>
+    </category>
+    
+ <category>
+        <pattern>^ cine esti ^</pattern>
+        <template><image>https://media1.tenor.com/images/9ae606e924dc6e7c9b6de9475a4b635f/tenor.gif?itemid=4713534</image>
+		Da-mi voie sa ma prezint.Numele meu este <bot name="name" />, iar scopul meu este sa iti recomand un film fantasy.
+		 Vrei sa vezi un film fantasy?
+		</template>
+    </category>
+    
+         <category>
+        <pattern>^ numesti ^</pattern>
+        <template><image>https://media1.tenor.com/images/9ae606e924dc6e7c9b6de9475a4b635f/tenor.gif?itemid=4713534</image>
+		Da-mi voie sa ma prezint.Numele meu este <bot name="name" />, iar scopul meu este sa iti recomand un film fantasy.
+		 Vrei sa vezi un film fantasy?
+		</template>
+    </category>
+    
+         <category>
+        <pattern>^ numele ^</pattern>
+        <template><image>https://media1.tenor.com/images/9ae606e924dc6e7c9b6de9475a4b635f/tenor.gif?itemid=4713534</image>
+		Da-mi voie sa ma prezint. Numele meu este <bot name="name" />, iar scopul meu este sa iti recomand un film fantasy.
+	    Vrei sa vezi un film fantasy?
+		</template>
+    </category>
+    
+         <category>
+        <pattern>^ nume ^</pattern>
+        <template><image>https://media1.tenor.com/images/9ae606e924dc6e7c9b6de9475a4b635f/tenor.gif?itemid=4713534</image>
+	    Da-mi voie sa ma prezint. Numele meu este <bot name="name" />, iar scopul meu este sa iti recomand un film fantasy.
+	     Vrei sa vezi un film fantasy?
+		</template>
+    </category>
+    
+        <category>
+	    <pattern>Ce faci </pattern>
+	    <template><image>https://media1.tenor.com/images/fc34b2bb6e434d6b958319ab4b3bd61b/tenor.gif?itemid=12770910</image>
+		Eu? 
+	    Bine fac,mulțumesc <get name="numeledoritorului" />.Ia spune-mi,vrei sa vezi un film fantasy ?</template>
+    </category>
+	
+<category>
+    <pattern>^ nu ^</pattern>
+    <than>* Vrei sa vizionezi un film fantasy?</than>
+    <template>Imi pare rau ca nu te pot ajuta. O zi frumoasa in continuare ! </template>
+</category>
+
+ <category>
+            <pattern>da</pattern>
+            <template>Super! Hai sa vedem ce putem iti recomanda.    In primul rand alege o tema care crezi ca ti-ar placea mai mult. 
+            
+            <button>
+                <text>Futuristic</text>
+                <postback>Futuristic</postback>
+            </button>
+            
+            <button>
+                <text>Epic</text>
+                <postback>Epic</postback>
+            </button>
+            
+            <button>
+                <text>Horror</text>
+                <postback>Horror</postback>
+            </button>
+            
+            <button>
+                <text>Disney</text>
+                <postback>Disney</postback>
+            </button>
+            
+            <button>
+                <text>Cu supereroi</text>
+                <postback>Cu supereroi</postback>
+            </button>
+            
+            <button>
+                <text>Cu monstri</text>
+                <postback>Cu monstri</postback>
+            </button>
+            
+            
+            </template>
+        </category>
+        
+            <category>
+        <pattern>Futuristic</pattern>
+        <than> *  În primul rând alege o temă care crezi că ți-ar plăcea mai mult </than>
+        <template>Pe lângă futuristic,alege și alt gen
+        
+        <button>
+            <text>Extraterestri</text>
+            <postback>Extraterestri</postback>
+        </button>
+        <button>
+            <text>Roboti</text>
+            <postback>Roboti</postback>
+        </button>
+        
+        <think><set name = "topic">Futuristic</set></think>
+        <think><set name="tema">Futuristic</set></think>
+        </template>
+        
+    </category>
+
+    
+    
+    
+    
+
+    
+     <topic name = "Futuristic">
+        
+                  <category>
+        <pattern>Extraterestri</pattern>
+        <than> *  futuristic,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>extraterestri inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>extraterestri dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>extraterestri inainte de 2000</pattern>
+            <template>Îți recomand filmul: Alien 1979 
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Alien 1979</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Alien 1979 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Alien 1979 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/10/68/alien-354493l.jpg?ts=1253268944</image>
+                        <title>Alien 1979 </title>
+                        <subtitle>Gen: Horror, SF, Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer1</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/alien-1068/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu extraterestri</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu extraterestri</pattern>
+            <template>Îți recomand filmul: Independence Day 1996
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Independence Day 1996</postback>
+                 </button>
+                 
+                 <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Independence Day 1996 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Independence Day 1996</pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/17/26/id-4-independence-day-313838l-175x0-w-ead3302a.jpg</image>
+                        <title>Independence Day 1996</title>
+                        <subtitle>Gen:Actiune,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer2</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/independence-day-ziua-independentei-1726/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu extraterestri</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+    <category>
+            <pattern>Al treilea film cu extraterestri</pattern>
+            <template>Îți recomand filmul: Predator 1987
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Predator 1987</postback>
+                 </button>
+                 
+                 <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Predator 1987 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Predator 1987</pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/10/39/predator-443748l-175x0-w-d93c2482.jpg</image>
+                        <title>Predator 1987</title>
+                        <subtitle>Gen:Actiune,Aventura,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer3</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/predator-1039/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+        
+        
+        
+        
+        
+        <category>
+            <pattern>extraterestri dupa 2000</pattern>
+            <template>Îți recomand filmul: Prometheus 2012
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Prometheus 2012</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Prometheus 2012 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Prometheus 2012 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/48/83/20/prometheus-958165l-175x0-w-cbbd6e55.jpg</image>
+                        <title>Prometheus 2012 </title>
+                        <subtitle>Gen: Horror, SF, Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer4</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/prometheus-488320/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu extraterestri dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu extraterestri dupa 2000</pattern>
+            <template>Îți recomand filmul: Alien Covenant 2017
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Alien Covenant 2017</postback>
+                 </button>
+                 
+                 <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Alien Covenant 2017 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Alien Covenant 2017</pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/58/95/05/alien-covenant-188032l-1600x1200-n-28d712f0.jpg</image>
+                        <title>Alien Covenant 2017</title>
+                        <subtitle>Gen:Actiune,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer5</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/alien-covenant-589505/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu extraterestri dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+    <category>
+            <pattern>Al treilea film cu extraterestri dupa 2000</pattern>
+            <template>Îți recomand filmul: War of the Worlds 2005
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>War of the Worlds 2005</postback>
+                 </button>
+                 
+                 <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> War of the Worlds 2005 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>War of the Worlds 2005</pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/01/03/19/war-of-the-worlds-640900l.jpg?ts=1253269027</image>
+                        <title>War of the Worlds 2005</title>
+                        <subtitle>Gen:Actiune,Aventura,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer6</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/war-of-the-worlds-razboiul-lumilor-10319//</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+        <pattern>Roboti</pattern>
+        <than> *  futuristic,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>roboti inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>roboti dupa 2000</postback>
+        </button>
+        </template>
+        </category>
+      
+      <category>
+            <pattern>roboti inainte de 2000</pattern>
+            <template>Îți recomand filmul: The Terminator 1984
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Terminator 1984</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Terminator 1984 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Terminator 1984 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/10/37/the-terminator-696522l-1600x1200-n-83063cff.jpg</image>
+                        <title>The Terminator 1984 </title>
+                        <subtitle>Gen: Horror, SF, Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer7</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-terminator-terminatorul-1037//</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu roboti</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+              <category>
+            <pattern>Al doilea film cu roboti</pattern>
+            <template>Îți recomand filmul: Blade Runner 1982
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Blade Runner 1982</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Blade Runner 1982 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Blade Runner 1982 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/10/69/blade-runner-631392l-1600x1200-n-2f8afa3e.jpg</image>
+                        <title>Blade Runner 1982 </title>
+                        <subtitle>Gen: Horror, SF, Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer8</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/blade-runner-vanatorul-de-recompense-1069/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu roboti</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+                      
+                      
+                      
+                      <category>
+            <pattern>Al treilea film cu roboti</pattern>
+            <template>Îți recomand filmul: The Matrix 1999
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Matrix 1999</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Matrix 1999 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Matrix 1999 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/02/09/the-matrix-326470l.jpg?ts=1253268939</image>
+                        <title>The Matrix 1999 </title>
+                        <subtitle>Gen: Actiune,Aventura,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer9</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-matrix-matrix-209/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                      
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>roboti dupa 2000</pattern>
+            <template>Îți recomand filmul: Transformers 2007
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Transformers 2007</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Transformers 2007 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Transformers 2007 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/01/24/25/transformers-264049l-1600x1200-n-b403ecc6.jpg</image>
+                        <title>Transformers 2007 </title>
+                        <subtitle>Gen: Actiune,Aventura,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer10</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/transformers-transformers-razboiul-lor-in-lumea-noastra-12425/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu roboti dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu roboti dupa 2000</pattern>
+            <template>Îți recomand filmul: I,Robot 2004
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>I,Robot 2004</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> I,Robot 2004 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>I,Robot 2004 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/54/02/i-robot-380480l.jpg?ts=1253268981</image>
+                        <title>I,Robot 2004 </title>
+                        <subtitle>Gen: Actiune,Aventura,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer11</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/i-robot-eu-robotul-5402/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                    
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        </topic>
+        
+        
+        
+        
+        
+         <category>
+        <pattern>Epic</pattern>
+        <than> *  În primul rând alege o temă care crezi că ți-ar plăcea mai mult </than>
+        <template>Pe lângă epic,alege și alt gen
+        
+        <button>
+            <text>Vrajitori</text>
+            <postback>Vrajitori</postback>
+        </button>
+        <button>
+            <text>Luptatori</text>
+            <postback>Luptatori</postback>
+        </button>
+        <button>
+            <text>Pirati</text>
+            <postback>Pirati</postback>
+        </button>
+        
+        <think><set name = "topic">Epic</set></think>
+        <think><set name="tema">Epic</set></think>
+        </template>
+        
+    </category>
+        
+        
+    <topic name = "Epic">
+        
+                  <category>
+        <pattern>Vrajitori</pattern>
+        <than> *  epic,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>vrajitori inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>vrajitori dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>vrajitori inainte de 2000</pattern>
+            <template>Îți recomand filmul: The Princess Bride 1987
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Princess Bride 1987</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Princess Bride 1987 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Princess Bride 1987 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/09/20/the-princess-bride-474183l.jpg?ts=1253268943</image>
+                        <title>The Princess Bride 1987 </title>
+                        <subtitle>Gen: Aventura,Fantastic</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer12</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-princess-bride-file-de-poveste-920/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu vrajitori</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu vrajitori</pattern>
+            <template>Îți recomand filmul: The Wizard of Oz 1939
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Wizard of Oz 1939</postback>
+                 </button>
+                 
+                 <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Wizard of Oz 1939 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Wizard of Oz 1939</pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/17/26/id-4-independence-day-313838l-175x0-w-ead3302a.jpg</image>
+                        <title>The Wizard of Oz 1939</title>
+                        <subtitle>Gen:Aventura,Familie,Fantastic,Muzical</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer13</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-wizard-of-oz-vrajitorul-din-oz-4103/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu vrajitori</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+    <category>
+            <pattern>Al treilea film cu vrajitori</pattern>
+            <template>Îți recomand filmul: Excalibur 1981
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Excalibur 1981</postback>
+                 </button>
+                 
+                 <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Excalibur 1981 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Excalibur 1981</pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/14/71/excalibur-673055l.jpg?ts=1285755342</image>
+                        <title>Excalibur 1981</title>
+                        <subtitle>Gen:Aventura,Drama,Fantastic</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer14</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/excalibur-1471/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+        
+        
+        
+        
+        
+        <category>
+            <pattern>vrajitori dupa 2000</pattern>
+            <template>Îți recomand filmul: Harry Potter 2001
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Harry Potter 2001</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Harry Potter 2001 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Harry Potter 2001 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/14/68/harry-potter-and-the-sorcerers-stone-910695l-1600x1200-n-ca173518.jpg</image>
+                        <title>Harry Potter 2001 </title>
+                        <subtitle>Gen: Aventura,Familie,Fantastic,Mister</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer15</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/harry-potter-and-the-sorcerers-stone-harry-potter-si-piatra-filozofala-1468/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu vrajitori dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu vrajitori dupa 2000</pattern>
+            <template>Îți recomand filmul: Snow White and the Hunstman 2012
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Snow White and the Hunstman 2012</postback>
+                 </button>
+                 
+                 <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Snow White and the Hunstman 2012 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Snow White and the Hunstman 2012</pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/56/66/28/snow-white-and-the-huntsman-417205l-1600x1200-n-b7e832e5.jpg</image>
+                        <title>Snow White and the Hunstman 2012</title>
+                        <subtitle>Gen:Actiune,Aventura,Drama,Fantastic</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer16</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/snow-white-and-the-huntsman-566628/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu vrajitori dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+    <category>
+            <pattern>Al treilea film cu vrajitori dupa 2000</pattern>
+            <template>Îți recomand filmul: Merlin 2008
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Merlin 2008</postback>
+                 </button>
+                 
+                 <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Merlin 2008 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Merlin 2008</pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/03/05/76/merlin-705357l-1600x1200-n-24e0c95b.jpg</image>
+                        <title>Merlin 2008</title>
+                        <subtitle>Gen:Actiune,Drama,Familie,Fantastic</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer17</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/merlin-30576/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+        <pattern>Luptatori</pattern>
+        <than> *  epic,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>luptatori inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>luptatori dupa 2000</postback>
+        </button>
+        </template>
+        </category>
+      
+      <category>
+            <pattern>luptatori inainte de 2000</pattern>
+            <template>Îți recomand filmul: Braveheart 1995
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Braveheart 1995</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Braveheart 1995 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Braveheart 1995 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/06/51/braveheart-404435l.jpg?ts=1276597951</image>
+                        <title>Braveheart 1995 </title>
+                        <subtitle>Gen: Actiune,Biografic,Drama,Razboi</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer18</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/braveheart-braveheart-inima-neinfricata-651/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu luptatori</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+              <category>
+            <pattern>Al doilea film cu luptatori</pattern>
+            <template>Îți recomand filmul: The 13th Warrior 1999
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The 13th Warrior 1999</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The 13th Warrior 1999 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The 13th Warrior 1999 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/16/31/the-13th-warrior-426557l.jpg?ts=1318415212</image>
+                        <title>The 13th Warrior 1999 </title>
+                        <subtitle>Gen: Aventura</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer19</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-13th-warrior-al-13-lea-razboinic-1631/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu luptatori</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+                      
+                      
+                      
+                      <category>
+            <pattern>Al treilea film cu luptatori</pattern>
+            <template>Îți recomand filmul: Dragonheart 1996
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Dragonheart 1996</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Dragonheart 1996 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Dragonheart 1996 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/20/68/dragonheart-209342l.jpg?ts=1253268950</image>
+                        <title>Dragonheart 1996 </title>
+                        <subtitle>Gen: Aventura,Fantastic</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer20</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/dragonheart-inima-de-dragon-2068/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>luptatori dupa 2000</pattern>
+            <template>Îți recomand filmul: The Lord of the Rings 2001
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Lord of the Rings 2001</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Lord of the Rings 2001 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Lord of the Rings 2001 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/01/24/25/transformers-264049l-1600x1200-n-b403ecc6.jpg</image>
+                        <title>The Lord of the Rings 2001 </title>
+                        <subtitle>Gen: Aventura,Drama,Fantastic</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer21</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-lord-of-the-rings-the-fellowship-of-the-ring-stapanul-inelelor-fratia-2360/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu luptatori dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu luptatori dupa 2000</pattern>
+            <template>Îți recomand filmul: The Hobbit 2012
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Hobbit 2012</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Hobbit 2012 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Hobbit 2012 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/02/44/98/the-hobbit-an-unexpected-journey-247000l-1600x1200-n-7a3716c0.jpg</image>
+                        <title>The Hobbit 2012 </title>
+                        <subtitle>Gen: Actiune,Aventura,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer22</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-hobbit-an-unexpected-journey-24498/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu luptatori dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al treilea film cu luptatori dupa 2000</pattern>
+            <template>Îți recomand filmul: 300
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>300</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> 300 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>300 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/01/58/98/300-168863l-1600x1200-n-e6b3aa63.jpg</image>
+                        <title>300 </title>
+                        <subtitle>Gen: Actiune,Aventura,Drama,Razboi</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer23</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/300-300-eroii-de-la-termopile-15898/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+       
+         <category>
+        <pattern>Pirati</pattern>
+        <than> *  epic,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>pirati inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>pirati dupa 2000</postback>
+        </button>
+        </template>
+        </category>
+      
+      <category>
+            <pattern>pirati dupa 2000</pattern>
+            <template>Îți recomand filmul: Pirates of the Caribbean 2003
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Pirates of the Caribbean 2003</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Pirates of the Caribbean 2003 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Pirates of the Caribbean 2003 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/45/32/the-pirates-of-the-caribbean-the-curse-of-the-black-pearl-990363l.jpg?ts=1283945899</image>
+                        <title>Pirates of the Caribbean 2003 </title>
+                        <subtitle>Gen: Actiune,Biografic,Drama,Razboi</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer24</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/pirates-of-the-caribbean-the-curse-of-the-black-pearl-4532/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu pirati dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al doilea film cu pirati dupa 2000</pattern>
+            <template>Îți recomand filmul: Treasure Planet 2002
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Treasure Planet 2002</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Treasure Planet 2002 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Treasure Planet 2002 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/27/19/treasure-planet-812248l-1600x1200-n-fcaaef48.jpg</image>
+                        <title>Treasure Planet 2002 </title>
+                        <subtitle>Gen: Animatie,Aventura,Familie,Romantic,SF</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer25</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/treasure-planet-planeta-comorilor-2719/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu pirati dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+          <category>
+            <pattern>Al treilea film cu pirati dupa 2000</pattern>
+            <template>Îți recomand filmul: Blackbeard 2006
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Blackbeard 2006</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Blackbeard 2006 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Blackbeard 20062 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/01/77/06/blackbeard-833408l.jpg?ts=1386950842</image>
+                        <title>Blackbeard 2006 </title>
+                        <subtitle>Gen: Aventura,Drama</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer26</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/blackbeard-barba-neagra-17706/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                    </card>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>pirati inainte de 2000</pattern>
+            <template>Îți recomand filmul: Cutthroat Island 1995
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Cutthroat Island 1995</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Cutthroat Island 1995 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Cutthroat Island 1995 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/14/27/cutthroat-island-840309l.jpg?ts=1290592792</image>
+                        <title>Cutthroat Island 1995 </title>
+                        <subtitle>Gen: Actiune,Aventura,Comedie,Familie,Romantic</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer27</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/cutthroat-island-insula-secretelor-1427/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu pirati inainte 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al doilea film cu pirati inainte 2000</pattern>
+            <template>Îți recomand filmul: The Goonies 1985
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Goonies 1985</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Goonies 1985 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Goonies 1985 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/68/60/the-goonies-225211l.jpg?ts=1377003926</image>
+                        <title>The Goonies 1985 </title>
+                        <subtitle>Gen: Aventura,Comedie,Familie,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer28</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-goonies-talharii-6860/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                    </card>
+           
+            </template>
+        </category>
+        
+        </topic>
+    
+        
+        
+        
+        
+        
+   
+   
+         <category>
+        <pattern>Horror</pattern>
+        <than> *  În primul rând alege o temă care crezi că ți-ar plăcea mai mult </than>
+        <template>Pe lângă horror,alege și alt gen
+        
+        <button>
+            <text>Fantome</text>
+            <postback>Fantome</postback>
+        </button>
+        <button>
+            <text>Monstri</text>
+            <postback>Monstri</postback>
+        </button>
+        
+        <think><set name = "topic">Horror</set></think>
+        <think><set name="tema">Horror</set></think>
+        </template>
+        
+    </category>
+        
+        
+          <topic name = "Horror">
+        
+                  <category>
+        <pattern>Fantome</pattern>
+        <than> *  horror,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>fantome inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>fantome dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>fantome inainte de 2000</pattern>
+            <template>Îți recomand filmul: The Innocents 1961
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Innocents 1961</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Innocents 1961 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Innocents 1961 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/02/16/99/the-innocents-626434l-1600x1200-n-dcb300d5.jpg</image>
+                        <title>The Innocents 1961 </title>
+                        <subtitle>Gen: Horror,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer29</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-innocents-21699/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu fantome</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al doilea film cu fantome</pattern>
+            <template>Îți recomand filmul: Carnival of Souls 1962
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Carnival of Souls 1962</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Carnival of Souls 1962 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Carnival of Souls 1962 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/08/45/60/carnival-of-souls-653699l.jpg?ts=1389036331</image>
+                        <title>Carnival of Souls 1962 </title>
+                        <subtitle>Gen: Horror,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer30</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/carnival-of-souls-84560/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu fantome</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+                 <category>
+            <pattern>Al treilea film cu fantome</pattern>
+            <template>Îți recomand filmul: The Exorcist 1973
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Exorcist 1973</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Exorcist 1973 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Exorcist 1973 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/47/86/the-exorcist-585257l.jpg?ts=1253268976</image>
+                        <title>The Exorcist 1973 </title>
+                        <subtitle>Gen: Horror</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer31</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-exorcist-exorcistul-4786/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                     
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>fantome dupa 2000</pattern>
+            <template>Îți recomand filmul: The Conjuring 2013
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Conjuring 2013</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Conjuring 2013 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Conjuring 2013 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/48/80/13/the-conjuring-361575l-1600x1200-n-cbf25e92.jpg</image>
+                        <title>The Conjuring 2013 </title>
+                        <subtitle>Gen: Horror,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer32</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-conjuring-488013/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu fantome dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al doilea film cu fantome dupa 2000</pattern>
+            <template>Îți recomand filmul: Paranormal Activity 2007
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Paranormal Activity 2007</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Paranormal Activity 2007 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Paranormal Activity 2007 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/04/43/39/paranormal-activity-158342l-1600x1200-n-9394a4d4.jpg</image>
+                        <title>Paranormal Activity 2007 </title>
+                        <subtitle>Gen: Horror,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer33</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/paranormal-activity-44339/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu fantome dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+         <category>
+            <pattern>Al treilea film cu fantome dupa 2000</pattern>
+            <template>Îți recomand filmul: The Ring 2002
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Ring 2002</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Ring 2002 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Ring 2002 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/28/14/the-ring-581991l.jpg?ts=1253268956</image>
+                        <title>The Ring 2002 </title>
+                        <subtitle>Gen: Horror,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer34</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-ring-avertizarea-2814/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                     
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         
+         <category>
+        <pattern>Monstri</pattern>
+        <than> *  epic,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>monstri inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>monstri dupa 2000</postback>
+        </button>
+        </template>
+        </category>
+      
+      <category>
+            <pattern>monstri inainte de 2000</pattern>
+            <template>Îți recomand filmul: Dracula 1992
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Dracula 1992</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Dracula 1992 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Dracula 1992 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/19/35/dracula-232059l.jpg?ts=1444054145</image>
+                        <title>Dracula 1992 </title>
+                        <subtitle>Gen: Horror,Drama,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer35</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/dracula-1935/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu monstri inainte de 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al doilea film cu monstri inainte de 2000</pattern>
+            <template>Îți recomand filmul: The Frighteners 1996
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Frighteners 1996</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Frighteners 1996 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Frighteners 1996 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/19/12/the-frighteners-969559l-1600x1200-n-cbf6ad66.jpg</image>
+                        <title>The Frighteners 1996 </title>
+                        <subtitle>Gen: Aventura,SF</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer36</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-frighteners-un-om-si-trei-fantome-1912/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+               
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+            <category>
+            <pattern>monstri dupa 2000</pattern>
+            <template>Îți recomand filmul: Constantine 2005
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Constantine 2005</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Constantine 2005 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Constantine 2005 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/71/56/constantine-504188l-1600x1200-n-a817efae.jpg</image>
+                        <title>Constantine 2005 </title>
+                        <subtitle>Gen: Fantastic,Horror,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer37</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/constantine-constantin-7156/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu monstri dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+                    <category>
+            <pattern>Al doilea film cu monstri dupa 2000</pattern>
+            <template>Îți recomand filmul: Van Helsing 2004
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Van Helsing 2004</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Van Helsing 2004 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Van Helsing 2004 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/47/49/van-helsing-989280l.jpg?ts=1253268976</image>
+                        <title>Van Helsing 2004 </title>
+                        <subtitle>Gen: Actiune,Aventura,Horror</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer38</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/van-helsing-4749/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu monstri dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+                 <category>
+            <pattern>Al treilea film cu monstri dupa 2000</pattern>
+            <template>Îți recomand filmul: Cloverfield 2008
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Cloverfield 2008</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Cloverfield 2008 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Cloverfield 2008 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/01/92/74/cloverfield-670847l.jpg?ts=1253269138</image>
+                        <title>Cloverfield 2008 </title>
+                        <subtitle>Gen: Actiune,Drama,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer39</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/cloverfield-monstruos-19274/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                      
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        </topic>
+        
+        
+        
+         <category>
+        <pattern>Disney</pattern>
+        <than> *  În primul rând alege o temă care crezi că ți-ar plăcea mai mult </than>
+        <template>Pe lângă disney,alege și alt gen
+        
+        <button>
+            <text>Animale</text>
+            <postback>Animale</postback>
+        </button>
+        <button>
+            <text>Oameni</text>
+            <postback>Oameni</postback>
+        </button>
+        
+        <think><set name = "topic">Disney</set></think>
+        <think><set name="tema">Disney</set></think>
+        </template>
+        
+    </category>
+        
+        
+          <topic name = "Disney">
+        
+                  <category>
+        <pattern>Animale</pattern>
+        <than> *  disney,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>animale inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>animale dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>animale inainte de 2000</pattern>
+            <template>Îți recomand filmul: The Lion King 1994
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Lion King 1994</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Lion King 1994 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Lion King 1994 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/23/63/the-lion-king-316372l-1600x1200-n-8336b179.jpg</image>
+                        <title>The Lion King 1994 </title>
+                        <subtitle>Gen: Animatie,Aventura,Drama,Familie,Muzical</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer40</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-lion-king-regele-leu-2363/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu animale</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+                <category>
+            <pattern>Al doilea film cu animale</pattern>
+            <template>Îți recomand filmul: 101 Dalmatians 1996
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>101 Dalmatians 1996</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> 101 Dalmatians 1996 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>101 Dalmatians 1996 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/00/96/101-dalmatians-528368l-1600x1200-n-4a9a8375.jpg</image>
+                        <title>101 Dalmatians 1996 </title>
+                        <subtitle>Gen: Animatie,Aventura,Drama,Familie,Muzical</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer41</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/101-dalmatians-101-dalmatieni-96/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu animale</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+                 <category>
+            <pattern>Al treilea film cu animale</pattern>
+            <template>Îți recomand filmul: Bambi 1942
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Bambi 1942</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Bambi 1942 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Bambi 1942 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/26/84/bambi-893984l-1600x1200-n-472a2024.jpg</image>
+                        <title>Bambi 1942 </title>
+                        <subtitle>Gen: Animatie,Aventura,Drama,Familie,Muzical</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer42</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/bambi-2684/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                     
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+              <category>
+            <pattern>animale dupa 2000</pattern>
+            <template>Îți recomand filmul: Winnie the Pooh 2011
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Winnie the Pooh 2011</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Winnie the Pooh 2011 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Winnie the Pooh 2011 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/48/84/79/winnie-the-pooh-991203l-1600x1200-n-55bc7503.jpg</image>
+                        <title>Winnie the Pooh 2011 </title>
+                        <subtitle>Gen: Animatie,Aventura,Drama,Familie,Muzical</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer43</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/winnie-the-pooh-488479/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                       
+                        <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu animale dupa 2000</postback>
+                         </button>
+                     
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+             <category>
+            <pattern>Al doilea film cu animale dupa 2000</pattern>
+            <template>Îți recomand filmul: Dumbo 2019
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Dumbo 2019</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Dumbo 2019 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Dumbo 2019 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/61/31/05/dumbo-320946l-1600x1200-n-daaa1ed7.jpg</image>
+                        <title>Dumbo 2019 </title>
+                        <subtitle>Gen: Animatie,Familie,Fantastic</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer44</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/dumbo-613105/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                       
+                        <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu animale dupa 2000</postback>
+                         </button>
+                     
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+               <category>
+            <pattern>Al treilea film cu animale dupa 2000</pattern>
+            <template>Îți recomand filmul: Brother Bear 2003
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Brother Bear 2003</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Brother Bear 2003 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Brother Bear 2003 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/54/48/brother-bear-303531l-1600x1200-n-4af6572a.jpg</image>
+                        <title>Brother Bear 2003 </title>
+                        <subtitle>Gen: Animatie,Aventura,Familie</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer45</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/brother-bear-inima-de-urs-5448/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                    
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+           
+                  <category>
+        <pattern>Oameni</pattern>
+        <than> *  disney,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>oameni inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>oameni dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>oameni inainte de 2000</pattern>
+            <template>Îți recomand filmul: Beauty and the Beast 1991
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Beauty and the Beast 1991</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Beauty and the Beast 1991 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Beauty and the Beast 1991 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/02/01/80/beauty-and-the-beast-670671l-1600x1200-n-d5795c88.jpg</image>
+                        <title>Beauty and the Beast 1991 </title>
+                        <subtitle>Gen: Animatie,Familie,Fantastic,Muzical,Dragoste</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer46</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/beauty-and-the-beast-frumoasa-si-bestia-20180/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu oameni inainte de 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu oameni inainte de 2000</pattern>
+            <template>Îți recomand filmul: Mulan 1998
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Mulan 1998</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Mulan 1998 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Mulan 1998 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/24/94/mulan-688803l.jpg?ts=1253268953</image>
+                        <title>Mulan 1998 </title>
+                        <subtitle>Gen: Animatie,Comedie</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer47</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/mulan-neinfricata-mulan-2494/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                      
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>oameni dupa 2000</pattern>
+            <template>Îți recomand filmul: Frozen 2013
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Frozen 2013</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Frozen 2013 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Frozen 2013 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/57/83/81/frozen-574714l-1600x1200-n-b46c6dd0.jpg</image>
+                        <title>Frozen 2013 </title>
+                        <subtitle>Gen: Animatie,Muzical,Familie,Aventura,Comedie</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer48</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/frozen-578381/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu oameni dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al doilea film cu oameni dupa 2000</pattern>
+            <template>Îți recomand filmul: Moana 2016
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Moana 2016</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Moana 2016 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Moana 2016 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/59/20/04/moana-768626l-1600x1200-n-676dd74e.jpg</image>
+                        <title>Moana 2016 </title>
+                        <subtitle>Gen: Animatie,Comedie,Aventura,Familie,Muzical</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer49</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/moana-592004/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                 
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        </topic>
+        
+       
+       
+       
+       
+       
+       
+       
+       
+       
+          <category>
+        <pattern>Cu supereroi</pattern>
+        <than> *  În primul rând alege o temă care crezi că ți-ar plăcea mai mult </than>
+        <template>Pe lângă supereroi,alege și alt gen
+        
+        <button>
+            <text>DC</text>
+            <postback>DC</postback>
+        </button>
+        <button>
+            <text>Marvel</text>
+            <postback>Marvel</postback>
+        </button>
+        
+        <think><set name = "topic">Cu supereroi</set></think>
+        <think><set name="tema">Cu supereroi</set></think>
+        </template>
+        
+    </category>
+        
+        
+          <topic name = "Cu supereroi">
+        
+                  <category>
+        <pattern>Marvel</pattern>
+        <than> *  supereroi,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>supereroi marvel inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>supereroi marvel dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>supereroi marvel inainte de 2000</pattern>
+            <template>Îți recomand filmul: Captain America 1990
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Captain America 1990</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Captain America 1990 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Captain America 1990 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/01/54/98/captain-america-219617l.jpg?ts=1253269083</image>
+                        <title>Captain America 1990 </title>
+                        <subtitle>Gen: Actiune</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer50</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/captain-america-15498/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu supereroi marvel</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+            <category>
+            <pattern>Al doilea film cu supereroi marvel</pattern>
+            <template>Îți recomand filmul: The Punisher 1989
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Punisher 1989</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Punisher 1989 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Punisher 1989 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/67/18/the-punisher-315142l.jpg?ts=1297424199</image>
+                        <title>The Punisher 1989 </title>
+                        <subtitle>Gen: Actiune</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer51</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-punisher-razbunatorul-6718//</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu supereroi marvel</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al treilea film cu supereroi marvel</pattern>
+            <template>Îți recomand filmul: The Fantastic Four 1994
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Fantastic Four 1994</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Fantastic Four 1994 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Fantastic Four 1994 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/24/83/24/the-fantastic-four-833616l.jpg?ts=1446450920</image>
+                        <title>The Fantastic Four 1994 </title>
+                        <subtitle>Gen: Actiune</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer52</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-fantastic-four-248324/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                       
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>supereroi marvel dupa 2000</pattern>
+            <template>Îți recomand filmul: Iron Man 2008
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Iron Man 2008</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Iron Man 2008 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Iron Man 2008 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/01/59/72/iron-man-499725l-1600x1200-n-2ab2a241.jpg</image>
+                        <title>Iron Man 2008 </title>
+                        <subtitle>Gen: Actiune,Aventura,Drama,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer53</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/iron-man-iron-man-omul-de-otel-15972/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu supereroi marvel dupa 2000</postback>
+                         </button>
+                       
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu supereroi marvel dupa 2000</pattern>
+            <template>Îți recomand filmul: Thor the Dark World 2013
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Thor the Dark World 2013</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Thor the Dark World 2013 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Thor the Dark World 2013 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/56/68/29/thor-the-dark-world-126554l-1600x1200-n-8c9be046.jpg</image>
+                        <title>Thor the Dark World 2013 </title>
+                        <subtitle>Gen: Actiune,Aventura,Drama,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer54</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/thor-the-dark-world-566829/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu supereroi marvel dupa 2000</postback>
+                         </button>
+                       
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al treilea film cu supereroi marvel dupa 2000</pattern>
+            <template>Îți recomand filmul: Captain America Civil War 2016
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Captain America Civil War 2016</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Captain America Civil War 2016 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Captain America Civil War 2016 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/59/06/15/captain-america-civil-war-709577l-1600x1200-n-539c1bbb.jpg</image>
+                        <title>Captain America Civil War 2016 </title>
+                        <subtitle>Gen: Actiune,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer55</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/captain-america-civil-war-590615/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                       
+                       <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al patrulea film cu supereroi marvel dupa 2000</postback>
+                         </button>
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al patrulea film cu supereroi marvel dupa 2000</pattern>
+            <template>Îți recomand filmul: The Avengers 2012
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Avengers 2012</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Avengers 2012 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Avengers 2012 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/02/90/70/the-avengers-288318l-1600x1200-n-c951eeee.jpg</image>
+                        <title>The Avengers 2012 </title>
+                        <subtitle>Gen: Actiune</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer56</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-avengers-29070/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                    
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+                  <category>
+        <pattern>DC</pattern>
+        <than> *  supereroi,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>supereroi dc inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>supereroi dc dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>supereroi dc inainte de 2000</pattern>
+            <template>Îți recomand filmul: Batman 1989
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Batman 1989</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Batman 1989 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Batman 1989 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/18/31/batman-210411l.jpg?ts=1585318143</image>
+                        <title>Batman 1989 </title>
+                        <subtitle>Gen: Actiune,Fantastic,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer57</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/batman-1831/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu supereroi dc</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu supereroi dc</pattern>
+            <template>Îți recomand filmul: Superman 1978
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Superman 1978</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Superman 1978 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Superman 1978 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/13/10/superman-718153l-1600x1200-n-960fb8c3.jpg</image>
+                        <title>Superman 1978 </title>
+                        <subtitle>Gen: Actiune,Drama,SF</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer58</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/superman-1310//</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu supereroi dc</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al treilea film cu supereroi dc</pattern>
+            <template>Îți recomand filmul: X-Men 2000
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>X-Men 2000</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> X-Men 2000 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>X-Men 2000 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/00/32/x-men-386681l.jpg?ts=1291844664</image>
+                        <title>X-Men 2000 </title>
+                        <subtitle>Gen: Actiune,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer59</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/x-men-32/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                  
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+           <category>
+            <pattern>supereroi dc dupa 2000</pattern>
+            <template>Îți recomand filmul: The Dark Knight 2008
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Dark Knight 2008</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Dark Knight 2008 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Dark Knight 2008 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/01/60/15/the-dark-knight-519932l-1600x1200-n-5d930543.jpg</image>
+                        <title>The Dark Knight 2008 </title>
+                        <subtitle>Gen: Actiune,Crima,Drama,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer60</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-dark-knight-cavalerul-negru-16015/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu supereroi dc dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al doilea film cu supereroi dc dupa 2000</pattern>
+            <template>Îți recomand filmul: Joker 2019
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Joker 2019</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Joker 2019 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Joker 2019 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/21/12/925/joker-612646l-1600x1200-n-756e3b25.jpg</image>
+                        <title>Joker 2019 </title>
+                        <subtitle>Gen: Actiune,Crima,Drama,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer61</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/joker-2112925/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu supereroi marvel</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al treilea film cu supereroi dc dupa 2000</pattern>
+            <template>Îți recomand filmul: Suicide Squad 2016
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Suicide Squad 2016</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Suicide Squad 2016 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Suicide Squad 2016 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/48/87/51/suicide-squad-223054l-1600x1200-n-ce5e6957.jpg</image>
+                        <title>Suicide Squad 2016 </title>
+                        <subtitle>Gen: Actiune,Crima,Drama,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer62</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/suicide-squad-488751/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                       
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        </topic>
+        
+        
+        
+          <category>
+        <pattern>Cu monstri</pattern>
+        <than> *  În primul rând alege o temă care crezi că ți-ar plăcea mai mult </than>
+        <template>Pe lângă monstri,alege și alt gen
+        
+        <button>
+            <text>Animale</text>
+            <postback>Animale</postback>
+        </button>
+        <button>
+            <text>Extraterestri</text>
+            <postback>Extraterestri</postback>
+        </button>
+        <button>
+            <text>Supranatural</text>
+            <postback>Supranatural</postback>
+        </button>
+        
+        <think><set name = "topic">Cu monstri</set></think>
+        <think><set name="tema">Cu monstri</set></think>
+        </template>
+        
+    </category>
+        
+        
+          <topic name = "Cu monstri">
+        
+                  <category>
+        <pattern>Animale</pattern>
+        <than> *  monstri,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>monstri animale inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>monstri animale dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>monstri animale inainte de 2000</pattern>
+            <template>Îți recomand filmul: The Fly 1986
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Fly 1986</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Fly 1986 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Fly 1986 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/67/50/the-fly-300641l-1600x1200-n-b9debfc0.jpg</image>
+                        <title>The Fly 1986 </title>
+                        <subtitle>Gen: Horror,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer63</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-fly-musca-6750/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu monstri animale</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al doilea film cu monstri animale</pattern>
+            <template>Îți recomand filmul: Jaws 1975
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Jaws 1975</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Jaws 1975 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Jaws 1975 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/10/76/jaws-636245l-1600x1200-n-5c418686.jpg</image>
+                        <title>Jaws 1975 </title>
+                        <subtitle>Gen: Aventuri,horror,thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer64</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/jaws-falci-1076/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu monstri animale</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+         <category>
+            <pattern>Al treilea film cu monstri animale</pattern>
+            <template>Îți recomand filmul: King Kong 1976
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>King Kong 1976</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> King Kong 1976 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>King Kong 1976 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/02/08/94/king-kong-243431l.jpg?ts=1253269162</image>
+                        <title>King Kong 1976 </title>
+                        <subtitle>Gen: Acţiune,Aventuri,Fantastic,Horror,Romantic,Thriller,Dragoste</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer65</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/king-kong-20894/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al patrulea film cu monstri animale</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Al patrulea film cu monstri animale</pattern>
+            <template>Îți recomand filmul: Godzilla 1988
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Godzilla 1988</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Godzilla 1988 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Godzilla 1988 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/01/78/godzilla-581446l-1600x1200-n-d7cb8f7c.jpg</image>
+                        <title>Godzilla 1988 </title>
+                        <subtitle>Gen: Acţiune,Fantastic,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer66</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/godzilla-178/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                      
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+         <category>
+            <pattern>monstri animale dupa 2000</pattern>
+            <template>Îți recomand filmul: Jurassic Park 3 2001
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Jurassic Park 3 2001</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Jurassic Park 3 2001 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Jurassic Park 3 2001 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/03/77/jurassic-park-iii-207311l.jpg?ts=1253268940</image>
+                        <title>Jurassic Park 3 2001 </title>
+                        <subtitle>Gen: Acţiune,Aventuri,Fantastic,Horror,Romantic,Thriller,Dragoste</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer67</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/jurassic-park-iii-377/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu monstri animale dupa 2000</postback>
+                         </button>
+                      
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Al doilea film cu monstri animale dupa 2000</pattern>
+            <template>Îți recomand filmul: Godzilla 2014
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Godzilla 2014</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Godzilla 2014 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Godzilla 2014 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/48/73/78/godzilla-889095l.jpg?ts=1399394128</image>
+                        <title>Godzilla 2014 </title>
+                        <subtitle>Gen: Actiune,Aventura,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer68</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/godzilla-487378/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                 
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+                   <category>
+        <pattern>Extraterestri</pattern>
+        <than> *  monstri,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>monstri extraterestri inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>monstri extraterestri dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>monstri extraterestri inainte de 2000</pattern>
+            <template>Îți recomand filmul: Alien Resurrection 1997
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Alien Resurrection 1997</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Alien Resurrection 1997 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Alien Resurrection 1997 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/23/34/alien-resurrection-159879l.jpg?ts=1253268952</image>
+                        <title>Alien Resurrection 1997 </title>
+                        <subtitle>Gen: Horror,SF,Thriller,Actiune</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer69</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/alien-resurrection-alien-renasterea-2334/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu monstri extraterestri</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+          <category>
+            <pattern>Al doilea film cu monstri extraterestri</pattern>
+            <template>Îți recomand filmul: The Thing 1982
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Thing 1982</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Thing 1982 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Thing 1982 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/01/50/81/the-thing-208020l-1600x1200-n-6c504e6b.jpg</image>
+                        <title>The Thing 1982 </title>
+                        <subtitle>Gen: Horror,SF,Thriller,Mister</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer70</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-thing-creatura-15081/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+         <category>
+            <pattern>monstri extraterestri dupa 2000</pattern>
+            <template>Îți recomand filmul: The Host 2006
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Host 2006</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Host 2006 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Host 2006 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/01/74/99/gwoemul-810991l-1600x1200-n-220a3ce0.jpg</image>
+                        <title>The Host 2006 </title>
+                        <subtitle>Gen: Comedie,Drama,Fantastic,Horror,SF,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer71</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/gwoemul-monstrul-17499/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu monstri extraterestri dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+          <category>
+            <pattern>Al doilea film cu monstri extraterestri dupa 2000</pattern>
+            <template>Îți recomand filmul: Under the skin 2014
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Under the skin 2014</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Under the skin 2014 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Under the skin 2014 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/48/83/11/under-the-skin-385273l-1600x1200-n-46c6b645.jpg</image>
+                        <title>Under the skin 2014 </title>
+                        <subtitle>Gen: Horror,SF,Thrillerr</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer72</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/under-the-skin-488311/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                       
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+           
+                   <category>
+        <pattern>Supranatural</pattern>
+        <than> *  monstri,alege </than>
+        <template>Doresti ca filmul sa fie inainte sau dupa anul 2000 ?
+        
+        <button>
+            <text>Inainte de 2000</text>
+            <postback>monstri supranaturali inainte de 2000</postback>
+        </button>
+        <button>
+            <text>Dupa 2000</text>
+            <postback>monstri supranaturali dupa 2000</postback>
+        </button>
+        </template>
+    </category>
+        
+        <category>
+            <pattern>monstri supranaturali inainte de 2000</pattern>
+            <template>Îți recomand filmul: Dr Jekyll and Sister Hyde 1971
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Dr Jekyll and Sister Hyde 1971</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Dr Jekyll and Sister Hyde 1971 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Dr Jekyll and Sister Hyde 1971 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/12/19/65/dr-jekyll-sister-hyde-640621l-1600x1200-n-c454771b.jpg</image>
+                        <title>Dr Jekyll and Sister Hyde 1971 </title>
+                        <subtitle>Gen: Horror,SF,Thriller,Actiune</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer73</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/dr-jekyll-sister-hyde-121965/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu monstri supranaturali</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+         <category>
+            <pattern>Al doilea film cu monstri supranaturali</pattern>
+            <template>Îți recomand filmul: The Evil Dead 1981
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Evil Dead 1981</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Evil Dead 1981 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Evil Dead 1981 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/02/01/89/the-evil-dead-623878l-1600x1200-n-ccf79d37.jpg</image>
+                        <title>The Evil Dead 1981 </title>
+                        <subtitle>Gen: Fantastic,Horror,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer74</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-evil-dead-20189/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu monstri supranaturali</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+         <category>
+            <pattern>Al treilea film cu monstri supranaturali</pattern>
+            <template>Îți recomand filmul: Frankenstein 1994
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Frankenstein 19941</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Frankenstein 1994 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Frankenstein 1994 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/db/movie/00/17/64/frankenstein-132415l.jpg?ts=1410183569</image>
+                        <title>Frankenstein 1994 </title>
+                        <subtitle>Gen: Drama,Horror,Romantic,SF,Dragoste</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer75</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/frankenstein-1764/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                      
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+        
+        
+          <category>
+            <pattern>monstri supranaturali dupa 2000</pattern>
+            <template>Îți recomand filmul: The Mist 2007
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Mist 2007</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Mist 2007 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Mist 2007 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/02/06/06/the-mist-128120l-1600x1200-n-fb97898d.jpg</image>
+                        <title>The Mist 2007 </title>
+                        <subtitle>Gen:Horror</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer76</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-mist-negura-20606/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al doilea film cu monstri supranaturali dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+           <category>
+            <pattern>Al doilea film cu monstri supranaturali dupa 2000</pattern>
+            <template>Îți recomand filmul: The Babadook 2014
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>The Babadook 2014</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> The Babadook 2014 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>The Babadook 2014 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/58/34/17/the-babadook-870302l-1600x1200-n-c86a3fd8.jpg</image>
+                        <title>The Babadook 2014 </title>
+                        <subtitle>Gen:Horror,Drama,Thriller</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer77</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/the-babadook-583417//</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                        
+                         <button>
+                            <text>Aș dori un alt film din aceeasi categorie</text>
+                            <postback>Al treilea film cu monstri supranaturali dupa 2000</postback>
+                         </button>
+                        
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+          <category>
+            <pattern>Al treilea film cu monstri supranaturali dupa 2000</pattern>
+            <template>Îți recomand filmul: Hellboy 2004
+                 <button>
+                     <text>Vreau să aflu mai multe despre acest film</text>
+                     <postback>Hellboy 2004</postback>
+                 </button>
+                
+                <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                </button>
+            <think><set name="film"> Hellboy 2004 </set></think>
+            </template>
+        </category>
+        
+         <category>
+            <pattern>Hellboy 2004 </pattern>
+            <template>
+                
+                    <card>
+                        <image>https://static.cinemagia.ro/img/resize/db/movie/00/58/76/hellboy-174528l-1600x1200-n-9a7f4db8.jpg</image>
+                        <title>Hellboy 2004 </title>
+                        <subtitle>Gen:Actiune,Fantastic,SF</subtitle>
+                        <button>
+                            <text>Trailer</text>
+                            <postback>trailer78</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Mai multe detalii</text>
+                            <url>https://www.cinemagia.ro/filme/hellboy-hellboy-eroul-scapat-din-infern-5876/</url>
+                        </button>
+                        
+                        <button>
+                            <text>Aș dori un alt film</text>
+                            <postback>bun</postback>
+                        </button>
+                       
+                    </card>
+                    
+              
+            </template>
+        </category>
+        
+        
+        </topic>
+        
+        
+        <category>
+				<pattern>bun</pattern>
+				<template><image>https://media1.tenor.com/images/dacb476966cd5165688d4a4326d5d695/tenor.gif?itemid=5458744</image>
+					Să înțeleg că nu era un film interesant.Nicio problemă,dai click pe "Vreau alt film" pentru a va intoarce pe meniul principal.
+				<button>
+				<text>Vreau alt film</text>
+					<postback>da</postback>
+				</button>
+				   
+				</template>
+		</category>
+        
+        
+       
+
+     <category>
+	    <pattern>trailer1</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/85/21/22/852122_mp4.mp4</video>
+	    </template>
+    </category>
+
+     <category>
+	    <pattern>trailer2</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/64/66/53/646653_mp4.mp4</video>
+	    </template>
+    </category>
+    
+     <category>
+	    <pattern>trailer3</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>trailer4</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/c0/nf/zx/1b7yc0nfzx_mp4_720p_1332156842.mp4</video>
+	    </template>
+    </category>
+
+    <category>
+	    <pattern>trailer5</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/fl/0q/9g/1grafl0q9g_mp4_720p_1489509853.mp4</video>
+	    </template>
+    </category>
+
+   <category>
+	    <pattern>trailer6</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/76/44/72/764472_mp4.mp4</video>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>trailer7</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/27/07/72/270772_mp4.mp4</video>
+	    </template>
+    </category>
+
+    <category>
+	    <pattern>trailer8</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/55/34/97/553497_mp4.mp4</video>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>trailer9</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/84/45/48/844548_mp4.mp4</video>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>trailer10</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/32/55/71/325571_mp4.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer11</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/26/62/67/266267_mp4.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer12</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/80/58/91/805891_mp4_360p.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer13</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer14</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/59/55/44/595544_mp4.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer15</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/38/10/30/381030_mp4.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer16</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/ar/rf/0b/1b6varrf0b_mp4_720p_1331309192.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer17</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/e5/hr/lp/1bt5e5hrlp_mp4_360p_1348764940.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer18</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/59/16/33/591633_mp4.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer19</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category><category>
+	    <pattern>trailer20</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/63/22/38/632238_mp4.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer21</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/56/01/83/560183_mp4.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer22</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/bs/rd/el/1bs9bsrdel_mp4_360p_1348504642.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer23</pattern>
+	    <template>
+	        <video>https://www.cinemagia.ro/filme/300-300-eroii-de-la-termopile-15898/</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer24</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/51/87/50/518750_mp4.mp4</video>
+	    </template>
+    </category>
+    <category>
+	    <pattern>trailer25</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/16/14/08/161408_mp4.mp4</video>
+	    </template>
+    </category>
+     <category>
+	    <pattern>trailer26</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer27</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/12/11/71/121171_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer28</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer29</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer30</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer31</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/68/16/81/681681_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer32</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/8o/on/1t/1cdu8oon1t_mp4_720p_1375440229.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer33</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/4i/0t/y0/1e8d4i0ty0_mp4_1417110061.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer34</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/28/78/50/287850_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer35</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/0k/39/gq/1dz40k39gq_mp4_1409858704.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer36</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer37</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/90/58/52/905852_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer38</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/85/65/24/856524_mp4.mp4</video>
+	    </template>
+    </category>  
+    <category>
+	    <pattern>trailer39</pattern>
+	    <template>
+	        <video>https://www.cinemagia.ro/filme/cloverfield-monstruos-19274/</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer40</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/oc/xh/8a/1flmocxh8a_mp4_1455716256.mp4</video>
+	    </template>
+    </category> 
+    <category>
+	    <pattern>trailer41</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/sw/8f/h5/1e7ksw8fh5_mp4_1416493405.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer42</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/57/tv/92/1ehm57tv92_mp4_1424359109.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer43</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/rn/fg/25/1fegrnfg25_mp4_1450102210.mp4</video>
+	    </template>
+    </category> 
+    <category>
+	    <pattern>trailer44</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/fv/na/07/1ixhfvna07_mp4_1549639349.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer45</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/13/52/66/135266_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer46</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/48/98/20/489820_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer47</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/kr/f6/1r/1exxkrf61r_mp4_1437146435.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer48</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/4l/ie/9t/1d3g4lie9t_mp4_1385046225.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer49</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/5q/se/pc/1g9b5qsepc_mp4_1474273092.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer50</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer51</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer52</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer53</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/68/80/15/688015_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer54</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/b9/uw/8u/1crrb9uw8u_mp4_1375885790.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer55</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/6p/ql/7b/1fo56pql7b_mp4_1457711400.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer56</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/29/48/49/294849_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer57</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/69/83/89/698389_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer58</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/60/49/62/604962_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer59</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/59/27/55/592755_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer60</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/30/22/66/302266_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer61</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/sz/vv/9b/1jjnszvv9b_mp4_720p_1568708784.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer62</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/pd/pg/hg/1fiipdpghg_mp4_360p_1468916605.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer63</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/28/02/07/280207_mp4_360p.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer64</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/17/34/51/173451_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer65</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer66</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/ro/ob/eb/1f5yroobeb_mp4_1443441557.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer67</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/38/32/73/383273_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer68</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/37/es/lg/1de437eslg_mp4_1398160177.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer69</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/23/16/68/231668_mp4.mp4</video>
+	    </template>
+    </category>
+      <category>
+	    <pattern>trailer70</pattern>
+	    <template>
+	        <video>https://www.cinemagia.ro/filme/the-thing-creatura-15081/</video>
+	    </template>
+    </category>
+     <category>
+	    <pattern>trailer71</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/92/60/32/926032_mp4.mp4</video>
+	    </template>
+    </category>
+     <category>
+	    <pattern>trailer72</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/p3/mt/km/1dckp3mtkm_mp4_1392198271.mp4</video>
+	    </template>
+    </category>
+     <category>
+	    <pattern>trailer73</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+     <category>
+	    <pattern>trailer74</pattern>
+	    <template>
+	        <video>n-are</video>
+	    </template>
+    </category>
+     <category>
+	    <pattern>trailer75</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/wd/08/72/1dz3wd0872_mp4_1409857117.mp4</video>
+	    </template>
+    </category>
+     <category>
+	    <pattern>trailer76</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/19/46/99/194699_mp4.mp4</video>
+	    </template>
+    </category>
+     <category>
+	    <pattern>trailer77</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/8j/yt/ue/1dat8jytue_mp4_360p_1390817018.mp4</video>
+	    </template>
+    </category>
+     <category>
+	    <pattern>trailer78</pattern>
+	    <template>
+	        <video>https://content.video.imedia.ro/storage/movie/55/bk/f9/1f6q55bkf9_ogg_720p_1444040985.ogv</video>
+	    </template>
+    </category>
+    
+    
+    
+
+</aiml>
